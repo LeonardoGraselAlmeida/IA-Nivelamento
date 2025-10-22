@@ -1,10 +1,11 @@
-from langchain.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+
+from langchain.prompts import ChatPromptTemplate
 
 load_dotenv()
 
-system =("system", "You are an assistant that answer questions in a {style} style.")
+system = ("system", "You are an assistant that answer questions in a {style} style.")
 user = ("user", "{question}")
 
 chat_prompt = ChatPromptTemplate.from_messages([system, user])
